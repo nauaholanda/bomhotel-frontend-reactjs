@@ -15,6 +15,12 @@ function Menubar() {
             command :() => navigate('/accommodations')
         },
         {
+            label : 'Nova Acomodação',
+            icon : 'pi pi-plus',
+            command :() => navigate('/admin/new-accommodation'),
+            className : user.role === 'ADMIN' ? 'display' : 'hidden'
+        },
+        {
             label : 'Fazer Login',
             icon : 'pi pi-sign-in',
             command :() => navigate('/login'),

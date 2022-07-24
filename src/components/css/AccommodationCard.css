@@ -30,8 +30,8 @@
 
 .accommodation-card-info .localization {
     display: flex;
-    align-items: flex-end;
-    height: 20px;
+    align-items: center;
+    min-height: 20px;
     color: gray;
     font-size: .9em;
 }
