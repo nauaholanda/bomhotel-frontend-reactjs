@@ -57,12 +57,12 @@ function Signup() {
     }
 
     return ( 
-        <div className='page whole-view'>
+        <div className='whole-view-page'>
             <Toast ref={toast} position='top-center' />
-            <div className='top-container'>
+            <div className='top-container-signup'>
                 <GoBackButton />
             </div>
-            <div className='container-signup'>
+            <div className='card container-signup'>
                 <img src={logo_orange} className='logo-signup' />
 
                 <p className='introduction-text-signup'>Cadastre-se e conheça as melhores acomodações ao redor do mundo.</p>

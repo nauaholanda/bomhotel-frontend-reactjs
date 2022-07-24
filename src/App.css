@@ -5,23 +5,25 @@
 }
 
 :root {
-    --default-card-backgroud-color : #fff;
-    --default-box-shadow : 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    --default-card-backgroud-color: #fff;
+    --default-card-border-radius: 17px;
+    --default-box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
 }
 
-.whole-view {
-    width: 100vw !important;
-    height: 100vh !important;
-}
-
-.page {
+.whole-view-page {
     width: 100vw;
-    height: calc(100vh - 49px);
+    height: 100vh;
     background-color: #edf0f3;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.card {
+    background-color: white;
+    border-radius: var(--default-card-border-radius);
+    box-shadow: var(--default-box-shadow);
 }
 
 ::-ms-reveal {
@@ -34,4 +36,8 @@
 
 .hidden {
     display: none;
+}
+
+.p-button {
+    justify-content: center;
 }

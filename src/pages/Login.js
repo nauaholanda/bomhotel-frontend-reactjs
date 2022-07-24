@@ -55,15 +55,15 @@ function Login() {
     }
 
     return ( 
-        <div className='page whole-view'>
+        <div className='whole-view-page'>
             <Toast ref={toast} position='top-center' />
-            <div className='top-container'>
+            <div className='top-container-login'>
                 <GoBackButton />
             </div>
-            <div className='container'>
+            <div className='card container-login'>
                 <img src={logo_orange} className='logo-login' />
 
-                <p className='welcome-text'>Bem-vindo(a)</p>
+                <p className='welcome-text-login'>Bem-vindo(a)</p>
 
                 <span className='p-float-label'>
                     <InputText id='username' value={usernameInput} onChange={(e) => setUsernameInput(e.target.value)} />
