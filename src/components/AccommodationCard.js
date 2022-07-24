@@ -6,8 +6,8 @@ import AccommodationToDetailContext from '../contexts/AccommodationToDetailConte
 
 function AccommodationCard({accommodation}) {
     const {accommodationToDetail, setAccommodationToDetail} = useContext(AccommodationToDetailContext);
-    const navigate = useNavigate();
 
+    const navigate = useNavigate();
 
     function openAccommodationDetails() {
         setAccommodationToDetail(accommodation);
