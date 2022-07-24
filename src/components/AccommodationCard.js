@@ -1,8 +1,19 @@
 import './css/AccommodationCard.css';
-import React from 'react';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router';
 import { Button } from 'primereact/button';
+import AccommodationToDetailContext from '../contexts/AccommodationToDetailContext';
 
 function AccommodationCard({accommodation}) {
+    const {accommodationToDetail, setAccommodationToDetail} = useContext(AccommodationToDetailContext);
+    const navigate = useNavigate();
+
+
+    function openAccommodationDetails() {
+        setAccommodationToDetail(accommodation);
+        navigate("/accommodation");
+    }
+
     return ( 
         <div className='card accommodation-card'>
             <img src='https://th.bing.com/th/id/R.698dc6a08d218108d3b14d574b20eed0?rik=lFA4BmHPjTYFmQ&pid=ImgRaw&r=0' className='accommodation-image'></img>
@@ -14,7 +25,7 @@ function AccommodationCard({accommodation}) {
             </div>
             <div className='accommodation-card-cost-and-button'>
                 <p className='cost'>R$ {accommodation.dailyCost}/dia</p>
-                <Button label='Ver Detalhes' />
+                <Button label='Ver Detalhes' onClick={openAccommodationDetails} />
             </div>
         </div> 
     );
