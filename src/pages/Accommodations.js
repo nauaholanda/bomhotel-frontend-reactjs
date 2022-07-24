@@ -57,7 +57,7 @@ function Accommodations() {
 
                 <span className='p-float-label'>
                 <InputNumber value={occupancyInput} onValueChange={(e) => e.value ? setOccupancyInput(e.value) : setOccupancyInput(0)} 
-                    mode="decimal" showButtons />
+                    mode="decimal" min={1} showButtons />
                     <label htmlFor='addressToSearch'>Para quantas pessoas?</label>
                 </span>
 
