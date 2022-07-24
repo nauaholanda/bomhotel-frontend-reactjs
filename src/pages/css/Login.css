@@ -1,13 +1,11 @@
-.top-container {
+.top-container-login {
     width: 300px;
 }
 
-.container {
+.container-login {
     width: 300px;
     height: 60vh;
-    background-color: white;
-    border-radius: 17px;
-    box-shadow: var(--default-box-shadow);
+    max-height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,16 +17,12 @@
     width: 60%;
 }
 
-.welcome-text {
+.welcome-text-login {
     font-size: 1.2em;
 }
 
-.p-password input, .p-inputtext, .p-button {
+.container-login .p-password input, .container-login .p-inputtext, .container-login .p-button {
     width: 250px;
-}
-
-.p-button {
-    justify-content: center;
 }
 
 .signup-text {

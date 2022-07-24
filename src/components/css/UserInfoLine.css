@@ -1,0 +1,7 @@
+.userInfoLine {
+    width: 100vw;
+    text-align: right;
+    background-color: #fff;
+    padding: 3px 10px;
+    box-shadow: var(--default-box-shadow);
+}

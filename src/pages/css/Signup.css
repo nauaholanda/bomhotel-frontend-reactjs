@@ -1,4 +1,4 @@
-.top-container {
+.top-container-signup {
     width: 300px;
 }
 
@@ -6,9 +6,6 @@
     width: 300px;
     height: 70vh;
     max-height: 430px;
-    background-color: var(--default-card-backgroud-color);
-    border-radius: 17px;
-    box-shadow: var(--default-box-shadow);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,12 +21,8 @@
     text-align: center;
 }
 
-.p-password input, .p-inputtext, .p-button {
+.container-signup .p-password input, .container-signup .p-inputtext, .container-signup .p-button {
     width: 250px;
-}
-
-.p-button {
-    justify-content: center;
 }
 
 .login-text {

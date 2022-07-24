@@ -3,6 +3,7 @@ import React, {useContext} from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../components/Header';
 import UserContext from '../contexts/UserContext';
+import UserInfoLine from '../components/UserInfoLine';
 
 function Layout() {
 
@@ -11,8 +12,10 @@ function Layout() {
     return ( 
     <div>
         <Header />
-        {user.name}
-        <Outlet />
+        <div className='page'>
+            <UserInfoLine />
+            <Outlet />
+        </div>
     </div> );
 }
 

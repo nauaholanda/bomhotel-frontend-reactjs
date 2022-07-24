@@ -1,0 +1,36 @@
+.search-bar {
+    width: 780px;
+    min-height: 60px;
+    padding: 0px 15px 15px 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.title-accommodation-search {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.search-bar .p-inputtext {
+    width: 150px;
+}
+
+.search-bar .p-float-label, .search-bar .p-button  {
+    margin-top: 25px;
+}
+
+.search-bar .p-inputnumber-button {
+    margin: 0 !important;
+}
+
+.search-bar .p-inputnumber .p-inputtext{
+    width: 90px;
+}
+
+.summary-accommodation-search {
+    margin-bottom: 15px;
+}
