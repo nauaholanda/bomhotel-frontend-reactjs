@@ -1,0 +1,68 @@
+.top-container-accommodation-details {
+    width: 780px;
+    margin-top: 15px;
+}
+
+.accommodation-details-card {
+    width: 780px;
+    min-height: 500px;
+    padding: 15px;
+    display: flex;
+}
+
+.accommodation-details-card .image {
+    width: 300px;
+    height: 480px;
+    object-fit: cover;
+    border-radius: var(--default-card-border-radius);
+}
+
+.accommodation-details-card-info {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 435px;
+}
+
+.accommodation-details-card-info .localization {
+    display: flex;
+    align-items: flex-end;
+    height: 20px;
+    color: gray;
+    margin-top: 10px;
+}
+
+.accommodation-details-card-info .localization .pi-map-marker{
+    margin-right: 7px;
+}
+
+.accommodation-details-card-info .description {
+    margin-top: 10px;
+}
+
+.accommodation-details-card-info .occupancy {
+    display: flex;
+    align-items: flex-end;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.accommodation-details-card-info .occupancy .pi-users {
+    margin-right: 7px;
+}
+
+.accommodation-details-card-info .cost {
+    display: flex;
+    align-items: flex-end;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.accommodation-details-card-info .cost .pi-money-bill {
+    margin-right: 7px;
+}
+
+.accommodation-details-card-info .button-container {
+    text-align: right;
+}

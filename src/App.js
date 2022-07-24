@@ -11,6 +11,8 @@ import Signup from './pages/Signup';
 import Accommodations from './pages/Accommodations';
 import { useState } from 'react';
 import UserContext from './contexts/UserContext';
+import AccommodationToDetailContext from './contexts/AccommodationToDetailContext';
+import AccommodationDetails from './pages/AccommodationDetails';
 
 function App() {
 
@@ -18,19 +20,26 @@ function App() {
     id : 0, username : '', name : '', role: ''
   });
 
+  const [accommodationToDetail, setAccommodationToDetail] = useState({
+    id: 0, name: '', description: '', dailyCost: 0, occupancy: 0, imageURL: '', country: '', state: '', city: '', zipCode: ''
+  })
+
   return (
     <UserContext.Provider value={{user, setUser}}>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path='/accommodations' element={<Accommodations />} />
-          </Route>
-          <Route path='/login' element={<Login />} />
-          <Route path='/logout' element={<Logout />} />
-          <Route path='/signup' element={<Signup />} />
-        </Routes>
-      </BrowserRouter>
+      <AccommodationToDetailContext.Provider value={{accommodationToDetail, setAccommodationToDetail}}>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path='/accommodations' element={<Accommodations />} />
+              <Route path='/accommodation' element={<AccommodationDetails />} />
+            </Route>
+            <Route path='/login' element={<Login />} />
+            <Route path='/logout' element={<Logout />} />
+            <Route path='/signup' element={<Signup />} />
+          </Routes>
+        </BrowserRouter>
+      </AccommodationToDetailContext.Provider>
     </UserContext.Provider>
   );
 }
