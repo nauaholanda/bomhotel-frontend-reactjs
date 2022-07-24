@@ -1,0 +1,12 @@
+.goBackButton {
+    cursor: pointer;
+    height: 30px;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.goBackButton:hover > p {
+    text-decoration: underline;
+}

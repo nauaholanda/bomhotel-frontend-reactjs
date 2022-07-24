@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+:root {
+    --default-card-backgroud-color : #fff;
+    --default-box-shadow : 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+}
+
+.whole-view {
+    width: 100vw !important;
+    height: 100vh !important;
+}
+
+.page {
+    width: 100vw;
+    height: calc(100vh - 49px);
+    background-color: #edf0f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+::-ms-reveal {
+    display: none
+}
+
+.display {
+    display: inline;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,20 @@
+.p-menubar {
+    min-width: 265px;
+    justify-content: right;
+    background: transparent;
+    border: none;
+}
+
+.p-menuitem-text, .p-menuitem-icon, a.p-menubar-button {
+    color: white !important;
+}
+
+a.p-menuitem-link:hover, a.p-menubar-button:hover {
+    background: #00000012 !important;
+}
+
+@media (max-width: 960px) {
+    .p-menuitem-text, .p-menuitem-icon {
+        color: black !important;
+    }
+}

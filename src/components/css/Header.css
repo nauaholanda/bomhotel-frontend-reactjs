@@ -1,0 +1,14 @@
+.header {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    color: white !important;
+    background-color: #FF7F00;
+    box-shadow: var(--default-box-shadow);
+}
+
+.logo-header {
+    height: 40px;
+}
