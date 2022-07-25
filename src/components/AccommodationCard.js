@@ -2,10 +2,10 @@ import './css/AccommodationCard.css';
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router';
 import { Button } from 'primereact/button';
-import AccommodationToDetailContext from '../contexts/AccommodationToDetailContext';
+import AccommodationToDetailContext from '../contexts/AccommodationContext';
 
 function AccommodationCard({accommodation}) {
-    const {accommodationToDetail, setAccommodationToDetail} = useContext(AccommodationToDetailContext);
+    const {setAccommodationToDetail} = useContext(AccommodationToDetailContext);
 
     const navigate = useNavigate();
 
@@ -16,7 +16,7 @@ function AccommodationCard({accommodation}) {
 
     return ( 
         <div className='card accommodation-card'>
-            <img src={accommodation.imageURL} className='accommodation-image'></img>
+            <img src={accommodation.imageURL} className='accommodation-image' alt='Foto da acomodação'></img>
             <div className='accommodation-card-info'>
                 <div className='name'><h3>{accommodation.name}</h3></div>
                 <p className='localization'><i className='pi pi-map-marker'/> {`${accommodation.country}, ${accommodation.state}, ${accommodation.city} - ${accommodation.zipCode} - ${accommodation.address}`}</p>

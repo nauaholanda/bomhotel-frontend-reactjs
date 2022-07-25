@@ -13,7 +13,7 @@ import UserContext from '../contexts/UserContext';
 
 function Login() {
 
-    const {user, setUser} = useContext(UserContext);
+    const {setUser} = useContext(UserContext);
 
     const navigate = useNavigate();
 
@@ -36,8 +36,6 @@ function Login() {
     }
 
     function sendLoginRequest() {
-        console.log(user)
-
         BomHotelApi.post("login", {username : usernameInput, password : passwordInput})
             .then((response) => {
                 setUser(response.data);
@@ -61,23 +59,22 @@ function Login() {
                 <GoBackButton />
             </div>
             <div className='card container-login'>
-                <img src={logo_orange} className='logo-login' />
+                <img src={logo_orange} className='logo-login' alt=''/>
 
                 <p className='welcome-text-login'>Bem-vindo(a)</p>
+                
+                    <span className='p-float-label'>
+                        <InputText id='username' value={usernameInput} onChange={(e) => setUsernameInput(e.target.value)} />
+                        <label htmlFor='username'>Usuário</label>
+                    </span>
 
-                <span className='p-float-label'>
-                    <InputText id='username' value={usernameInput} onChange={(e) => setUsernameInput(e.target.value)} />
-                    <label htmlFor='username'>Usuário</label>
-                </span>
+                    <span className='p-float-label'>
+                        <Password id='password' value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} 
+                            feedback={false} toggleMask={true} />
+                        <label htmlFor='password'>Senha</label>
+                    </span>
 
-                <span className='p-float-label'>
-                    <Password id='password' value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} 
-                        feedback={false} toggleMask={true} />
-                    <label htmlFor='password'>Senha</label>
-                </span>
-
-                <Button onClick={doLogin}>Fazer Login</Button>
-
+                    <Button onClick={doLogin}>Fazer Login</Button>
                 <p className='signup-text'>Novo(a) no Bom Hotel? <Link to='/signup'>Cadastre-se aqui</Link></p>
             </div>
         </div>

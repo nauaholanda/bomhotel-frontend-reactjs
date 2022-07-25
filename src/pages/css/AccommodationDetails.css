@@ -12,7 +12,7 @@
 
 .accommodation-details-card .image {
     width: 300px;
-    height: 480px;
+    height: 470px;
     object-fit: cover;
     border-radius: var(--default-card-border-radius);
 }
@@ -63,6 +63,10 @@
     margin-right: 7px;
 }
 
-.accommodation-details-card-info .button-container {
+.accommodation-details-card-info .buttons-container {
     text-align: right;
+}
+
+.accommodation-details-card-info .buttons-container .p-button {
+    margin-left: 10px;
 }

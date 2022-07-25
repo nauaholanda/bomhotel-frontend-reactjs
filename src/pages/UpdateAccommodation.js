@@ -1,5 +1,5 @@
-import './css/NewAccommodation.css';
-import React, { useRef, useState } from 'react';
+import './css/UpdateAccommodation.css';
+import React, { useContext, useRef, useState } from 'react';
 import GoBackButton from '../components/GoBackButton';
 import { InputText } from 'primereact/inputtext';
 import { InputTextarea } from 'primereact/inputtextarea';
@@ -8,18 +8,21 @@ import { Button } from 'primereact/button';
 import { useNavigate } from 'react-router-dom';
 import { Toast } from 'primereact/toast';
 import BomHotelApi from '../services/BomHotelApi';
+import AccommodationContext from '../contexts/AccommodationContext';
 
-function NewAccommodation() {
-    const [imageURL, setImageURL] = useState('');
-    const [name, setName] = useState('');
-    const [description, setDescription] = useState('');
-    const [country, setCountry] = useState('');
-    const [state, setState] = useState('');
-    const [city, setCity] = useState('');
-    const [zipCode, setZipCode] = useState('');
-    const [address, setAddress] = useState('');
-    const [occupancy, setOccupancy] = useState(1);
-    const [dailyCost, setDailyCost] = useState(0);
+function UpdateAccommodation() {
+    const {accommodationToUpdate, setAccommodationToUpdate} = useContext(AccommodationContext);
+
+    const [imageURL, setImageURL] = useState(accommodationToUpdate.imageURL);
+    const [name, setName] = useState(accommodationToUpdate.name);
+    const [description, setDescription] = useState(accommodationToUpdate.description);
+    const [country, setCountry] = useState(accommodationToUpdate.country);
+    const [state, setState] = useState(accommodationToUpdate.state);
+    const [city, setCity] = useState(accommodationToUpdate.city);
+    const [zipCode, setZipCode] = useState(accommodationToUpdate.zipCode);
+    const [address, setAddress] = useState(accommodationToUpdate.address);
+    const [occupancy, setOccupancy] = useState(accommodationToUpdate.occupancy);
+    const [dailyCost, setDailyCost] = useState(accommodationToUpdate.dailyCost);
     
     const navigate = useNavigate();
 
@@ -31,7 +34,7 @@ function NewAccommodation() {
             return;
         }
 
-        sendPostRequest();
+        sendPutRequest();
     }
 
     function validateFields() {
@@ -40,23 +43,26 @@ function NewAccommodation() {
     }
 
     function showBlankFieldsErrorMessage(){
-        toast.current.show({severity:'error', summary: 'Erro ao salvar', detail:'Todos os campos devem ser preenchidos', life: 5000});
+        toast.current.show({severity:'error', summary: 'Erro ao atualizar', detail:'Todos os campos devem ser preenchidos', life: 5000});
     }
 
     function showUnknownErrorMessage(){
-        toast.current.show({severity:'error', summary: 'Erro ao salvar', detail:'Ocorreu um erro inesperado e não foi possível salvar a acomodação', life: 5000});
+        toast.current.show({severity:'error', summary: 'Erro ao atualizar', detail:'Ocorreu um erro inesperado e não foi possível atualizar a acomodação', life: 5000});
     }
 
-    function sendPostRequest() {
+    function sendPutRequest() {
         var requestBody = generateRequestBody();
         BomHotelApi.post("accommodation", requestBody)
-            .then((response) => navigate('/accommodations'))
+            .then((response) => {
+                setAccommodationToUpdate(null);
+                navigate('/accommodations');
+            })
             .catch((error) => showUnknownErrorMessage());
     }
 
     function generateRequestBody() {
         return {
-            id: null,
+            id: accommodationToUpdate.id,
             imageURL: imageURL,
             name: name,
             description: description,
@@ -73,8 +79,8 @@ function NewAccommodation() {
     return ( 
         <div>
             <Toast ref={toast} position='top-right' />
-            <div className='top-container-new-accommodation'><GoBackButton /></div>
-            <div className='card new-accommodation-card'>
+            <div className='top-container-update-accommodation'><GoBackButton /></div>
+            <div className='card update-accommodation-card'>
 
                 <div className='image-container'>
                     <img className='image' src={imageURL} alt='Foto da acomodação'/>
@@ -146,4 +152,4 @@ function NewAccommodation() {
      );
 }
 
-export default NewAccommodation;
+export default UpdateAccommodation;
