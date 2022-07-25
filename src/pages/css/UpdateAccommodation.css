@@ -1,0 +1,84 @@
+.top-container-update-accommodation {
+    width: 780px;
+    margin-top: 15px;
+}
+
+.update-accommodation-card {
+    width: 780px;
+    min-height: 500px;
+    padding: 15px;
+    display: flex;
+}
+
+.update-accommodation-card .image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 15px;
+}
+
+.update-accommodation-card .image-container .image {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--default-card-border-radius);
+    border: .5px solid grey;
+}
+
+.update-accommodation-card .image-container #imageURL {
+    width: 300px;
+}
+
+.update-accommodation-card .right-container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.update-accommodation-card .right-container .infos-container{
+    margin-top: 20px;
+}
+
+.update-accommodation-card .right-container .infos-container #name {
+    width: 435px;
+}
+
+.update-accommodation-card .right-container .infos-container #description {
+    resize: none;
+    width: 435px;
+    height: 100px;
+}
+
+.update-accommodation-card .right-container .infos-container .description-textarea-container,
+.update-accommodation-card .right-container .infos-container .input-group {
+    margin-top: 30px;
+}
+
+.update-accommodation-card .right-container .infos-container .input-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.update-accommodation-card .right-container .infos-container .input-group #country,
+.update-accommodation-card .right-container .infos-container .input-group #state,
+.update-accommodation-card .right-container .infos-container .input-group #city,
+.update-accommodation-card .right-container .infos-container .input-group #zipCode {
+    width: 140px;
+}
+
+.update-accommodation-card .right-container .infos-container .input-group #address {
+    width: 287px;
+}
+
+.update-accommodation-card .right-container .infos-container .input-group #occupancy .p-inputtext,
+.update-accommodation-card .right-container .infos-container .input-group #dailyCost .p-inputtext {
+    width: 175px;
+}
+
+.update-accommodation-card .right-container .buttons-container { 
+    text-align: right;
+}
+
+.update-accommodation-card .right-container .buttons-container .p-button { 
+    margin-left: 10px;
+}

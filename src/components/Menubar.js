@@ -5,7 +5,7 @@ import { Menubar as PrimeMenubar } from 'primereact/menubar';
 import UserContext from '../contexts/UserContext';
 
 function Menubar() {
-    const {user, setUser} = useContext(UserContext);
+    const {user} = useContext(UserContext);
     const navigate = useNavigate();
 
     const items = [

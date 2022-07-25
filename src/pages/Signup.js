@@ -63,7 +63,7 @@ function Signup() {
                 <GoBackButton />
             </div>
             <div className='card container-signup'>
-                <img src={logo_orange} className='logo-signup' />
+                <img src={logo_orange} className='logo-signup' alt=''/>
 
                 <p className='introduction-text-signup'>Cadastre-se e conheça as melhores acomodações ao redor do mundo.</p>
 

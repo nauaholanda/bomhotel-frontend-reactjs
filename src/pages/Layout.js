@@ -1,5 +1,5 @@
 import './css/Layout.css'
-import React, {useContext} from 'react';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../components/Header';
 import UserInfoLine from '../components/UserInfoLine';

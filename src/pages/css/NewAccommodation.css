@@ -5,7 +5,7 @@
 
 .new-accommodation-card {
     width: 780px;
-    min-height: 480px;
+    min-height: 500px;
     padding: 15px;
     display: flex;
 }
@@ -19,7 +19,7 @@
 
 .new-accommodation-card .image-container .image {
     width: 300px;
-    height: 380px;
+    height: 400px;
     object-fit: cover;
     border-radius: var(--default-card-border-radius);
     border: .5px solid grey;
@@ -46,7 +46,7 @@
 .new-accommodation-card .right-container .infos-container #description {
     resize: none;
     width: 435px;
-    height: 80px;
+    height: 100px;
 }
 
 .new-accommodation-card .right-container .infos-container .description-textarea-container,

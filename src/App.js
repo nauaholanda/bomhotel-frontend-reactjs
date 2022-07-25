@@ -11,31 +11,34 @@ import Logout from './pages/Logout';
 import Signup from './pages/Signup';
 import Accommodations from './pages/Accommodations';
 import { useState } from 'react';
-import UserContext from './contexts/UserContext';
-import AccommodationToDetailContext from './contexts/AccommodationToDetailContext';
 import AccommodationDetails from './pages/AccommodationDetails';
 import NewAccommodation from './pages/NewAccommodation';
+import UpdateAccommodation from './pages/UpdateAccommodation';
+import UserContext from './contexts/UserContext';
+import AccommodationContext from './contexts/AccommodationContext';
 
 function App() {
 
+  const [accommodationToDetail, setAccommodationToDetail] = useState();
+  const [accommodationToUpdate, setAccommodationToUpdate] = useState(null);
   const [user, setUser] = useState({
-    id : 0, username : '', name : '', role: ''
+    id: 0,
+    username: '',
+    name: '',
+    role: ''
   });
 
-  const [accommodationToDetail, setAccommodationToDetail] = useState({
-    id: 0, name: '', description: '', dailyCost: 0, occupancy: 0, imageURL: '', country: '', state: '', city: '', zipCode: ''
-  })
-
   return (
-    <UserContext.Provider value={{user, setUser}}>
-      <AccommodationToDetailContext.Provider value={{accommodationToDetail, setAccommodationToDetail}}>
+    <UserContext.Provider value={{ user, setUser }}>
+      <AccommodationContext.Provider value={{ accommodationToDetail, setAccommodationToDetail, accommodationToUpdate, setAccommodationToUpdate }}>
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Layout />}>
+            <Route path='/' element={<Layout />} >
               <Route index element={<Home />} />
               <Route path='/accommodations' element={<Accommodations />} />
               <Route path='/accommodation' element={<AccommodationDetails />} />
               <Route path='/admin/new-accommodation' element={user.role === 'ADMIN' ? <NewAccommodation /> : <Navigate to='/login' replace />} />
+              <Route path='/admin/update-accommodation' element={user.role === 'ADMIN' && accommodationToUpdate !== null ? <UpdateAccommodation /> : <Navigate to='/accommodations' replace />} />
             </Route>
 
             <Route path='/login' element={<Login />} />
@@ -44,7 +47,7 @@ function App() {
 
           </Routes>
         </BrowserRouter>
-      </AccommodationToDetailContext.Provider>
+      </AccommodationContext.Provider>
     </UserContext.Provider>
   );
 }
