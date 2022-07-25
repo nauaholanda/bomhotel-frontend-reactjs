@@ -1,0 +1,14 @@
+.home-welcome-text {
+    padding: 10px 48px;
+}
+
+.home-news-text {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.home-news-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
