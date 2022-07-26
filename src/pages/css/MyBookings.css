@@ -1,0 +1,9 @@
+.my-bookings .bookings-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.my-bookings .my-bookings-title {
+    margin: 15px;
+}

@@ -1,0 +1,12 @@
+.booking-dialog {
+    width: 600px;
+}
+
+.booking-dialog-text {
+    margin-bottom: 30px;
+}
+
+.booking-dialog-bottom {
+    display: flex;
+    justify-content: space-between;
+}
