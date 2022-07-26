@@ -1,6 +1,6 @@
 <h1 align="center" >
   <img height="100" src="https://github.com/nauaholanda/bomhotel-frontend-reactjs/blob/main/src/images/logo_orange.png" />
-</1>
+</h1>
 
 <h1 align="center">Bom Hotel - Front-end</h1>
 <p align="center">Aplicação single page feita com ReactJS e Primereact.</p>
