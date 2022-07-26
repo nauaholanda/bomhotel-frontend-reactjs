@@ -1,26 +1,26 @@
-.accommodation-card {
+.booking-card {
     width: 780px;
     min-height: 60px;
     padding: 15px;
     margin-bottom: 15px;
     display: flex;
+    justify-content: space-between;
 }
 
-.accommodation-card .accommodation-image {
+.booking-card .accommodation-image {
     height: 120px;
     width: 150px;
     object-fit: cover;
     border-radius: var(--default-card-border-radius);
 }
 
-.accommodation-card-info {
+.booking-card-info {
     display: flex;
     flex-direction: column;
-    margin-left: 15px;
-    width: 60%;
+    width: 55%;
 }
 
-.accommodation-card-info .name {
+.booking-card-info .name {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -28,7 +28,7 @@
     -webkit-box-orient: vertical; 
 }
 
-.accommodation-card-info .localization {
+.booking-card-info .localization {
     display: flex;
     align-items: center;
     min-height: 20px;
@@ -36,12 +36,12 @@
     font-size: .9em;
 }
 
-.accommodation-card-info .localization .pi-map-marker{
+.booking-card-info .localization .pi-map-marker{
     font-size: .9em;
     margin-right: 7px;
 }
 
-.accommodation-card-info .description {
+.booking-card-info .description {
     font-size: .9em;
     height: 45px;
     overflow: hidden;
@@ -51,23 +51,25 @@
     -webkit-box-orient: vertical; 
 }
 
-.accommodation-card-info .occupancy {
+.booking-card-info .occupancy {
     display: flex;
     align-items: flex-end;
     height: 20px;
     font-size: .9em;
 }
 
-.accommodation-card-info .occupancy .pi-users {
+.booking-card-info .occupancy .pi-users {
     margin-right: 7px;
 }
 
-.accommodation-card-cost-and-button {
+.booking-card-totalCost-and-dates {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    text-align: right;
+    font-size: .9em;
 }
 
-.accommodation-card-cost-and-button .cost {
-    text-align: right;
+.booking-card-totalCost-and-dates .dates {
+    color: gray;
 }

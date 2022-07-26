@@ -15,6 +15,12 @@ function Menubar() {
             command :() => navigate('/accommodations')
         },
         {
+            label : 'Minhas Reservas',
+            icon : 'pi pi-calendar',
+            command :() => navigate('/my-bookings'),
+            className : user.role === 'CUSTOMER' ? 'display' : 'hidden'
+        },
+        {
             label : 'Nova Acomodação',
             icon : 'pi pi-plus',
             command :() => navigate('/admin/new-accommodation'),
@@ -30,7 +36,7 @@ function Menubar() {
             label : 'Fazer Logout',
             icon : 'pi pi-sign-out',
             command :() => navigate('/logout'),
-            className : user.role === '' ? 'hidden' : 'display'
+            className : user.role !== '' ?  'display' : 'hidden'
         }
     ]
 

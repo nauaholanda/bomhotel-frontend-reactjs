@@ -7,6 +7,8 @@ import AccommodationToDetailContext from '../contexts/AccommodationContext';
 function AccommodationCard({accommodation}) {
     const {setAccommodationToDetail} = useContext(AccommodationToDetailContext);
 
+    const dailyCostWith2DecimalPlaces = accommodation.dailyCost.toFixed(2);
+
     const navigate = useNavigate();
 
     function openAccommodationDetails() {
@@ -24,7 +26,7 @@ function AccommodationCard({accommodation}) {
                 <p className='occupancy'><i className='pi pi-users'/>{accommodation.occupancy} pessoa(s)</p>
             </div>
             <div className='accommodation-card-cost-and-button'>
-                <p className='cost'>R$ {accommodation.dailyCost}/dia</p>
+                <p className='cost'>R$ {dailyCostWith2DecimalPlaces}/dia</p>
                 <Button label='Ver Detalhes' onClick={openAccommodationDetails} />
             </div>
         </div> 
