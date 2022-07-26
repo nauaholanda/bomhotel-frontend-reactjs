@@ -1,5 +1,5 @@
 import './css/AccommodationDetails.css'
-import React, {useContext, useRef} from 'react';
+import React, {useContext, useRef, useState} from 'react';
 import { useNavigate } from 'react-router';
 import GoBackButton from '../components/GoBackButton';
 import { Button } from 'primereact/button';
@@ -7,6 +7,7 @@ import UserContext from '../contexts/UserContext';
 import BomHotelApi from '../services/BomHotelApi';
 import { Toast } from 'primereact/toast';
 import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
+import BookingDialog from '../components/BookingDialog';
 import AccommodationToDetailContext from '../contexts/AccommodationContext';
 
 function AccommodationDetails() {
@@ -17,12 +18,25 @@ function AccommodationDetails() {
 
     const toast = useRef(null);
 
+    const [showBookingDialog, setShowBookingDialog] = useState(false);
+
     function confirmDelete() {
         confirmDialog({
             message: `Deseja excluir a acomodação ${accommodationToDetail.name} do sistema?`,
             header: 'Confirmar exclusão',
             icon: 'pi pi-exclamation-triangle',
             accept: () => deleteAccommodation(),
+            acceptLabel: 'Sim',
+            rejectLabel: 'Não'
+        });
+    }
+
+    function confirmGoToLogin() {
+        confirmDialog({
+            message: `Para realizar reservas é necessário estar autenticado no sitema. Ir para tela de Login?`,
+            header: 'Necessário efetuar Login',
+            icon: 'pi pi-exclamation-triangle',
+            accept: () => navigate('/login'),
             acceptLabel: 'Sim',
             rejectLabel: 'Não'
         });
@@ -62,10 +76,17 @@ function AccommodationDetails() {
                             {user.role === 'ADMIN' ? 
                                 <>
                                     <Button className='p-button-danger' label='Deletar' onClick={confirmDelete}/> 
-                                    <ConfirmDialog />
                                     <Button label='Editar' onClick={editAccommodation}/>
                                 </>  
-                                : <Button label='Fazer Reserva'/>}
+                                : 
+                                <>
+                                    <Button label='Fazer Reserva' onClick={() => {user.id !== 0 ? setShowBookingDialog(true) : confirmGoToLogin()}}/>
+                                    <BookingDialog showBookingDialog={showBookingDialog} 
+                                        setShowBookingDialog={setShowBookingDialog} 
+                                        accommodation={accommodationToDetail}
+                                        toast={toast}/>
+                                </>}
+                                <ConfirmDialog />
                         </div>
                     </div>
                 </div>   
