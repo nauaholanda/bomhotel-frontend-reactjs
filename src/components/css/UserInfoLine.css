@@ -3,10 +3,9 @@
     text-align: right;
     background-color: #fff;
     padding: 3px 30px;
-    box-shadow: var(--default-box-shadow);
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .userInfoLine p {

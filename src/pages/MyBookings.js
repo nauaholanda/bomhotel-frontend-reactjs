@@ -1,10 +1,12 @@
+import './css/MyBookings.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import UserContext from '../contexts/UserContext';
 import BomHotelApi from '../services/BomHotelApi';
 import { Toast } from 'primereact/toast';
+import BookingCard from '../components/BookingCard';
 
 function MyBookings() {
-    const [bookingsList, setBookingsList] = useState(null);
+    const [bookingsList, setBookingsList] = useState([]);
 
     const {user} = useContext(UserContext);
 
@@ -23,9 +25,12 @@ function MyBookings() {
     }
 
     return ( 
-        <div>
+        <div className='my-bookings'>
+            <h2 className='my-bookings-title'>Estas são as reservas que você fez através do Bom Hotel! Boa hospedagem!</h2>
             <Toast ref={toast} position='top-right' />
-            {bookingsList.map((booking, index) => <BookingCard booking={booking} key={index}/>)}
+            <div className='bookings-container'>
+                {bookingsList.map((booking, index) => <BookingCard booking={booking} key={index} />)}
+            </div>
         </div> 
     );
 }

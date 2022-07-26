@@ -12,6 +12,7 @@ import NewAccommodation from './pages/NewAccommodation';
 import UpdateAccommodation from './pages/UpdateAccommodation';
 import UserContext from "./contexts/UserContext";
 import AccommodationContext from "./contexts/AccommodationContext";
+import MyBookings from "./pages/MyBookings";
 
 function Routes() {
     const { user } = useContext(UserContext);
@@ -23,6 +24,9 @@ function Routes() {
                 <Route path='/' element={<Layout />} >
                     <Route index element={<Home />} />
                     <Route path='/accommodations' element={<Accommodations />} />
+
+                    <Route path='/my-bookings' element={user.role === 'CUSTOMER' 
+                        ? <MyBookings /> : <Navigate to='/login' replace />} />
 
                     <Route path='/accommodation' element={accommodationToDetail 
                         ? <AccommodationDetails /> : <Navigate to='/accommodations' replace />} />
