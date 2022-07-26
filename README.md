@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+<h1 align="center" >
+  <img height="100" src="https://github.com/nauaholanda/bomhotel-frontend-reactjs/blob/main/src/images/logo_orange.png" />
+</1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Bom Hotel - Front-end</h1>
+<p align="center">Aplicação single page feita com ReactJS e Primereact.</p>
+<p align="center">Observação: Essa aplicação utiliza Contexts para compartilhar informações entre páginas, ou seja, cuidado com o F5.</p>
 
-## Available Scripts
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=ReactJS&message=v.17.0.2&color=blue&style=flat&logo=" />
+  <img src="https://img.shields.io/static/v1?label=Primereact&message=v.6.6.0&color=blue&style=flat&logo=" />
+  <img src="https://img.shields.io/static/v1?label=npm&message=v.8.11.0&color=blue&style=flat&logo=" />
+</p>
 
-In the project directory, you can run:
+<p align="center">
+ <a href="#features">Features</a> •
+ <a href="#telas-disponíveis">Telas disponíveis</a> • 
+ <a href="#tecnologias">Tecnologias</a> • 
+ <a href="#pré-requisitos">Pré-requisitos</a> • 
+ <a href="#autor">Autor</a>
+</p>
 
-### `npm start`
+<h2>Features</h2>
+<ul>
+  <li>Cadastro de usuário e Login</li>
+  <li>Cadastro, exclusão, atualização, pesquisa e reserva de acomodações</li>
+</ul>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h2>Telas Disponíveis</h2>
+<h3>Home</h3>
+<p>Exibe um carrossel animado com 3 imagens e uma seção de novidade, onde exibe as 5 últimas acomodações adicionadas ao sistema.</p>
+<p>Pode ser acessada ao clicar na logo do menu.</p>
+<p align="center">
+  <img src="https://github.com/nauaholanda/bomhotel-frontend-reactjs/blob/main/src/images/readme/home_page.png" />
+</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h3>Login</h3>
+<p>Exibe um formulário onde o usuário pode preencher com nome de usuário e senha para acessar o sistema, além de ter a possibilidade de acessar a tela de cadastro de usuário ou voltar para tela anterior. </p>
+<p>Pode ser acessada ao clicar na opção de "Fazer Login" no menu.</p>
+<p>(Observação: para acessar o sistema como administrador basta preencher os dois campos com "admin" e clicar em "Fazer Login")</p>
+<p align="center">
+  <img src="https://github.com/nauaholanda/bomhotel-frontend-reactjs/blob/main/src/images/readme/login_page.jpeg" />
+</p>
 
-### `npm test`
+<h3>Cadastro de usuário</h3>
+<p>Exibe um formulário onde o usuário pode preencher com nome, nome de usuário e senha para crair uma conta no sistema, além de ter a possibilidade de acessar a tela de login ou voltar para tela anterior.</p>
+<p>Pode ser acessada ao clicar no link ao final da tela de login.</p>
+<p align="center">
+  <img src="https://github.com/nauaholanda/bomhotel-frontend-reactjs/blob/main/src/images/readme/registration_page.jpeg" />
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h3>Pesquisa de acomodações</h3>
+<p>Exibe, inicialmente, todas as acomodações cadastradas no sistema e permite pesquisa-las por País, Estado, Cidade e quantidade de pessoas que acomoda.</p>
+<p>Pode ser acessada ao clicar na opção de "Acomodações" no menu.</p>
+<p align="center">
+  <img src="https://github.com/nauaholanda/bomhotel-frontend-reactjs/blob/main/src/images/readme/search_accommodation_page.jpeg" />
+</p>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h3>Detalhes de uma acomodação</h3>
+<p>Exibe todas as informações de uma acomodação, permite que usuários Clientes façam reservas e/ou que o Administrador realize edições ou exclua a acomodação do sistema.</p>
+<p>Pode ser acessada ao clicar em "Ver Detalhes" em um card de acomodação.</p>
+<p align="center">
+  Tela para Administrador
+  <img src="https://github.com/nauaholanda/bomhotel-frontend-reactjs/blob/main/src/images/readme/accommodation_details_admin.jpeg" />
+  Tela para Cliente
+  <img src="https://github.com/nauaholanda/bomhotel-frontend-reactjs/blob/main/src/images/readme/accommodation_details_customer.jpeg" />
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<h3>Criação de acomodação</h3>
+<p>Exibe um formulário vazio para queo usuário Administrador possa cadastrar uma nova acomodação no sistema.</p>
+<p>Pode ser acessada apenas pelo usuário Administrador, ao clicar na opção "Nova acomodação" no menu.</p>
+<p align="center">
+  <img src="https://github.com/nauaholanda/bomhotel-frontend-reactjs/blob/main/src/images/readme/new_accommodation_page.jpeg" />
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h3>Reservas do usuário</h3>
+<p>Exibe todas as reservas feitas pelo usuário logado.</p>
+<p>Pode ser acessada apenas por usuários Clientes, ao clicar na opção "Minhas reservas" no menu.</p>
+<p align="center">
+  <img src="https://github.com/nauaholanda/bomhotel-frontend-reactjs/blob/main/src/images/readme/my_bookings_page.jpeg" />
+</p>
 
-### `npm run eject`
+<h2>Tecnologias</h2>
+<ul>
+  <li><a href="https://reactjs.org/">ReactJS</a></li>
+  <li><a href="https://www.primefaces.org/primereact/">Primereact</a></li>
+  <li><a href="https://www.javascript.com/">JavaScript</a></li>
+</ul>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h2>Pré-requisitos</h2>
+<p>Para instalar e executar a aplicação serão necessárias duas ferramentas: <a href="https://git-scm.com/">Git</a> e <a href="https://nodejs.org/en/">Node.js</a>.</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<h4>Passo a passo para instalação e execução:</h4>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# Clone este repositório
+$ git clone <https://github.com/nauaholanda/bomhotel-frontend-reactjs>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Acesse a pasta do projeto no terminal/cmd
+$ cd bomhotel-frontend-reactjs
 
-## Learn More
+# Instale as dependências
+$ npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Execute a aplicação 
+$ npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# O servidor inciará na porta:3000 - acesse <http://localhost:3000>
+```
 
-### Code Splitting
+<h2>Autor</h2>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p> Feito com carinho e empenho por Nauã Holanda. </p>
+<p> Contatos: 
+  <a href="https://www.linkedin.com/in/nauaholanda/"><img src="https://img.shields.io/badge/-Nauã-blue?style=flat-square&logo=Linkedin&logoColor=white" /> </a> 
+  <img src="https://img.shields.io/badge/-naua.holanda@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:naua.holanda@gmail.com" />
+</p>
