@@ -106,7 +106,7 @@ $ npm install
 # Execute a aplicação 
 $ npm start
 
-# O servidor inciará na porta:3000 - acesse <http://localhost:3000>
+# O servidor iniciará na porta:3000 - acesse <http://localhost:3000>
 ```
 
 <p>Observação: para pleno funcionamento será necessário iniciar o back-end da aplicação, disponível neste link: https://github.com/nauaholanda/bomhotel-backend-springboot</p>
